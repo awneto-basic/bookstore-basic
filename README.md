@@ -4,7 +4,7 @@ A basic bookstore showcase page built with Flask.
 ### Features
 - Adding and removing books using forms and buttons on the page
 - Viewing information for books in stock
-- Accessing bookstore database via API 
+- Exposing book data via API 
 
 ### Accessing the platform
 To access the bookstore, go to https://api-bookstore-2022-01.herokuapp.com/
