@@ -1,4 +1,4 @@
-# bookstore-basic
+# bookstore-basic 📚
 A basic bookstore showcase page built with Flask.
 
 ### Features
@@ -19,7 +19,7 @@ Server exposes books via API. The following operations are supported:
 ##### API: Get book by ID
 Example:
 - Run https://api-bookstore-2022-01.herokuapp.com/api/books/3
-- Information for the book with id = 3 will be exposed.
+- Information for the book with id = 3, formatted in _json_, will be exposed.
 > {
 	"author":"Jon Bodner",
 	"currency":"GBP",
@@ -35,7 +35,7 @@ Example:
 ##### API: Get books given an author
 Example:
 - Run https://api-bookstore-2022-01.herokuapp.com/api/books/authors/Plato
-- Information for the books written by Plato will be exposed.
+- Information for the books written by Plato, formatted in _json_, will be exposed.
 >{
 	"books":
 		[
@@ -123,8 +123,6 @@ Example:
 	}
 	
 - Using Postman, send a PUT request using the _json_-formated data above to  https://api-bookstore-2022-01.herokuapp.com/api/books/3
-
-
 
 
 
