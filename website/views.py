@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, jsonify
-from flask_login import login_required, current_user
 from flask import request
 from flask import flash
 from .models import Book
@@ -11,7 +10,7 @@ views = Blueprint("views", __name__)
 
 @views.route("/", methods=["GET","POST"])  # homepage
 def home():
-
+    # TODO: Create method to add tags to books
     if request.method == "POST":
         print(request.form)
         title = request.form.get("bookTitle")
@@ -56,7 +55,7 @@ def home():
                 price= round(float(price), 2),
                 currency = currency,
                 quantity = int(quantity),
-                type = book_format,
+                format = book_format,
                 imageURL = image_URL
             )
             flash("Book added!", category="success")
@@ -75,3 +74,20 @@ def delete_book():
         db.session.commit()
         print("Book deleted")
     return jsonify({})
+
+@views.route("/books/<id>")
+def get_book(id):
+    book = Book.query.get_or_404(id)
+    #json formatting - RFC 8259
+    return ({
+                "title": book.title,
+                "author": book.author,
+                "edition": book.edition,
+                "description": book.description,
+                "price": book.price,
+                "currency": book.currency,
+                "quantity": book.quantity,
+                "format": book.format,
+                "imageURL": book.imageURL
+             })
+

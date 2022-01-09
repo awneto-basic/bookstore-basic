@@ -3,8 +3,6 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 
-
-
 class Book(db.Model):
     __tablename__ = "book"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -15,13 +13,19 @@ class Book(db.Model):
     price = db.Column(db.DECIMAL(10,2), nullable=False)
     currency = db.Column(db.String(4), nullable=False) # currency code: USD, GBP, BRL, EUR etc.
     quantity = db.Column(db.Integer)
-    type = db.Column(db.String(30), nullable=False)
+    format = db.Column(db.String(30), nullable=False)
     imageURL = db.Column(db.String(500))
-    tags = db.relationship("Tag")
+    dateCreated = db.Column(db.DateTime(timezone=True), default=func.now())
+    dateUpdated = db.Column(db.DateTime(timezone=True), default=func.now())
 
 class Tag(db.Model):
     __tablename__ = "tag"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    bookID = db.Column(db.Integer, db.ForeignKey("book.id"), nullable=False)
     tagName =  db.Column(db.String(30))
 
+class BookTag(db.Model):
+    __tablename__ = "booktag"
+    book_ID = db.Column(db.Integer, db.ForeignKey("book.id"), primary_key=True, nullable=False)
+    tag_ID = db.Column(db.Integer, db.ForeignKey("tag.id"), primary_key=True, nullable=False)
+
+# TODO: I could also add a table of authors to enable search by author ID
