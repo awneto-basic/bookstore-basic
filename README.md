@@ -26,7 +26,9 @@ Example:
 	"description":"Go is rapidly becoming the preferred language for building web services. While there are plenty of tutorials available that teach Go's syntax to developers with experience in other programming languages, tutorials aren't enough. They don't teach Go's idioms, so developers end up recreating patterns that don't make sense in a Go context. This practical guide provides the essential background you need to write clear and idiomatic Go.",
 	"edition":"1",
 	"format":"Hard copy",
-	"imageURL":"https://images-na.ssl-images-amazon.com/images/I/41zmzWx2CpL._SX379_BO1,204,203,200_.jpg","price":"35.00","quantity":1,
+	"imageURL":"https://images-na.ssl-images-amazon.com/images/I/41zmzWx2CpL._SX379_BO1,204,203,200_.jpg",
+	"price":"35.00",
+	"quantity":1,
 	"title":"Learning Go: An Idiomatic Approach to Real-World Go Programming"
 	}
 
@@ -39,7 +41,8 @@ Example:
 	"description":"Go is rapidly becoming the preferred language for building web services. While there are plenty of tutorials available that teach Go's syntax to developers with experience in other programming languages, tutorials aren't enough. They don't teach Go's idioms, so developers end up recreating patterns that don't make sense in a Go context. This practical guide provides the essential background you need to write clear and idiomatic Go.",
 	"edition":"1",
 	"format":"Hard copy",
-	"imageURL":"https://images-na.ssl-images-amazon.com/images/I/41zmzWx2CpL._SX379_BO1,204,203,200_.jpg","price":"35.00",
+	"imageURL":"https://images-na.ssl-images-amazon.com/images/I/41zmzWx2CpL._SX379_BO1,204,203,200_.jpg",
+	"price":"35.00",
 	"quantity":10,
 	"title":"Learning Go: An Idiomatic Approach to Real-World Go Programming"
 	}
