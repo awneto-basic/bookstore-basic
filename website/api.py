@@ -122,7 +122,7 @@ def get_books_by_author(author):
     books = Book.query.filter_by(author=author)
     output = []
     for book in books:
-        drink_data = {
+        books_data = {
             "title": book.title,
             "author": book.author,
             "edition": book.edition,
@@ -133,7 +133,7 @@ def get_books_by_author(author):
             "format": book.format,
             "imageURL": book.imageURL
         }
-        output.append(drink_data)
+        output.append(books_data)
     return{"books": output}
 
 def validate_book_entry(book):
