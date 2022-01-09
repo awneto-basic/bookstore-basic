@@ -1,0 +1,118 @@
+<!-- extending the base template -->
+{% extends "base.html" %}
+{% block title %}Bookstore{% endblock %}
+{% block content %}
+<h1>Books</h1>
+<ul class="list-group list-group-flush" id="books">
+    {% for book in books %}
+    <li class="list-group-item" id="book">
+        <div class="container">
+            <div class="row" id="book-entry" >
+                <div class="col-2">
+                    <img alt="Book cover" class="img-fluid rounded float-left" src={{book.imageURL}} />
+                </div>
+                <div class="col-8">
+                    <table class="table table-borderless">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" id="book-title">Title:</th>
+                                <td>{{book.title}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-author">Author:</th>
+                                <td>{{book.author}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-edition">Edition:</th>
+                                <td>{{book.edition}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-description">Description:</th>
+                                <td>{{book.description}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-price">Price:</th>
+                                <td>{{book.price}} {{book.currency}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-quantity">Quantity available:</th>
+                                <td>{{book.quantity}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" id="book-type">Format:</th>
+                                <td>{{book.type}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="close" onclick="deleteBook({{book.id}})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    {% endfor %}
+</ul>
+<br/>
+<form method="POST">
+    <div class="form-group row">
+        <label for="bookTitleForm" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+            <input name="bookTitle" id="bookTitleForm" class="form-control" placeholder="Insert a title">
+        </div>
+
+        <label for="bookAuthorForm" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+            <input name="author" id="bookAuthorForm" class="form-control" placeholder="Insert an author">
+        </div>
+
+        <label for="bookEditionForm" class="col-sm-2 col-form-label">Edition</label>
+        <div class="col-sm-10">
+            <input name="edition" id="bookEditionForm" class="form-control" placeholder="Insert this book's edition">
+        </div>
+
+        <label for="bookDescriptionForm" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+            <input name="description" id="bookDescriptionForm" class="form-control" placeholder="Insert a description for the book">
+        </div>
+
+        <label for="bookPriceForm" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input name="price" id="bookPriceForm" class="form-control" placeholder="Insert the price of the book">
+        </div>
+
+        <label for="bookCurrencyForm" class="col-sm-2 col-form-label">Currency</label>
+        <div class="col-sm-10">
+            <input name="currency" id="bookCurrencyForm" class="form-control" placeholder="Insert a currency">
+        </div>
+
+        <label for="bookQuantityForm" class="col-sm-2 col-form-label">Quantity</label>
+        <div class="col-sm-10">
+            <input name="quantity" id="bookQuantityForm" class="form-control" placeholder="How many books would you like to add?">
+        </div>
+
+        <label for="bookFormatForm" class="col-sm-2 col-form-label">Book format</label>
+        <div class="col-sm-10">
+            <input name="format" id="bookFormatForm" class="form-control" placeholder="Insert the format of the book">
+        </div>
+
+        <label for="bookImageURLForm" class="col-sm-2 col-form-label">Image URL</label>
+        <div class="col-sm-10">
+            <input name="imageURL" id="bookImageURLForm" class="form-control" placeholder="Book cover (image URL)">
+        </div>
+
+    </div>
+    <br/>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </div>
+</form>
+
+{% endblock %}
+
