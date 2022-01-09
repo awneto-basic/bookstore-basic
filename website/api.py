@@ -3,6 +3,7 @@ from flask import request
 from flask import flash
 from .models import Book
 from . import db
+from sqlalchemy.sql import func
 
 import json
 
@@ -79,7 +80,8 @@ def update_book(id):
         currency = request.json["currency"],
         quantity=request.json["quantity"],
         format=request.json["format"],
-        imageURL=request.json["imageURL"])
+        imageURL=request.json["imageURL"],
+        dateUpdated=func.now())
 
     book_exists = Book.query.filter_by(id=id).first()   # check if an entry for this book already exists in the database
 
