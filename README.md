@@ -102,7 +102,7 @@ Example:
 	"title":"Learning Go: An Idiomatic Approach to Real-World Go Programming"
 	}
 	
-- Using Postman, send a POST request using the _json_-formated data above to  https://api-bookstore-2022-01.herokuapp.com/api/books
+- Using [Postman](http://https://www.postman.com/ "Postman"), send a **POST** request using the _json_-formated data above to  https://api-bookstore-2022-01.herokuapp.com/api/books
 - If the book already exists, the number of books in stock for this entry will be updated.
 - If the book isn't in the database already, then an entry for the book will be added to the database.
 
@@ -122,7 +122,7 @@ Example:
 	"title":"Learning Go: An Idiomatic Approach to Real-World Go Programming"
 	}
 	
-- Using Postman, send a PUT request using the _json_-formated data above to  https://api-bookstore-2022-01.herokuapp.com/api/books/3
+- Using [Postman](http://https://www.postman.com/ "Postman"), send a **PUT** request using the _json_-formated data above to  https://api-bookstore-2022-01.herokuapp.com/api/books/3
 
 
 
