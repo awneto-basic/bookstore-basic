@@ -87,7 +87,7 @@ Example:
 }
 	
 
-##### API: Create book given book information
+##### API: Add a book given book information
 Example:
 - Use the following request (written in *json*) to add 10 copies of a book to the server:
 > {
